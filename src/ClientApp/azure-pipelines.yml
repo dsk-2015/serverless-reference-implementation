@@ -50,11 +50,10 @@ stages:
         echo $(cat .gitversion | grep -oP '(?<="FullSemVer":")[^"]*' | sed -e "s/\+/-/g") > src/ClientApp/public/semver.txt
       displayName: 'bump version'
 
-    - task: PublishBuildArtifacts@1
+    - task: PublishPipelineArtifact@1
       inputs:
-        pathtoPublish: 'src/ClientApp/public'
+        targetPath: 'src/ClientApp/public'
         artifactName: 'drop'
-        publishLocation: 'Container'
 
 - stage: Deploy
   jobs:
