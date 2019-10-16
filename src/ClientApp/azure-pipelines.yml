@@ -29,7 +29,7 @@ stages:
         AZURE_API_CLIENT_ID=$(azureApiClientId)
         AZURE_API_URL=$(azureApiUrl)
         EOF
-      displayName: 'configure azure tenant, client and api details'
+      displayName: 'configure azure tenant, client and api details - random change text'
 
     - script: |
         cd src/ClientApp
